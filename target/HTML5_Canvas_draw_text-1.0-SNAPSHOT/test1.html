@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<!--
+Project name(项目名称)：HTML5_Canvas_draw_text
+  File name(文件名): test1
+  Authors(作者）: mao
+  Author QQ：1296193245
+  GitHub：https://github.com/maomao124/
+  Date(创建日期)： 2022/4/3
+  Time(创建时间)： 21:37
+  Description(描述)： 无
+-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        canvas {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 3px solid plum;
+        }
+    </style>
+</head>
+<body>
+
+<canvas id="canvas" width="600" height="400">
+    浏览器不支持画布功能
+</canvas>
+
+<script>
+    var canvas = document.getElementById("canvas");
+    var ctx = canvas.getContext("2d");
+    ctx.font = "bold 36px serif";
+    ctx.fillStyle = "green";
+    //fillText()是 Canvas 2D API 的一部分，它在指定坐标处绘制文本字符串，
+    // 用当前的fillStyle填充字符串的字符。可选参数允许指定渲染文本的最大宽度，
+    // 用户代理 将通过压缩文本或使用较小的字体大小来实现。
+    // 此方法直接绘制到画布而不修改当前路径，因此任何后续的fill()或stroke()调用都不会对其产生影响。
+
+    // text – 一个DOMString ，指定要呈现到上下文中的文本字符串。使用由font 、textAlign 、 textBaseline和direction指定的设置呈现文本。
+    // x – 开始绘制文本的点的 x 轴坐标，以像素为单位。
+    // y – 开始绘制文本的基线的 y 轴坐标，以像素为单位。
+    // maxWidth – 文本一次可以渲染的最大像素宽度。如果未指定，则文本的宽度没有限制。但是，如果提供了这个值，用户代理将调整字距，
+    // 选择更水平压缩的字体（如果可用或可以在不损失质量的情况下生成），或者缩小到更小的字体大小以适应指定宽度的文本。
+    ctx.fillText("hello,你好", 200, 60)
+    ctx.strokeText("hello,你好", 200, 200)
+</script>
+
+</body>
+</html>
